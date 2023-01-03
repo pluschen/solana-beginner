@@ -24,7 +24,7 @@ const getWalletBalance = async (enteredPublicKey) => {
   try {
     // Connect to the Devnet
     const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
-    console.log("Connection object is:", connection);
+    // console.log("Connection object is:", connection);
 
     // Make a wallet (keypair) from privateKey and get its balance
     const myWallet = await Keypair.fromSecretKey(privateKey);
@@ -58,7 +58,6 @@ const airDropSol = async (enteredPublicKey) => {
 // Show the wallet balance before and after airdropping SOL
 const mainFunction = async () => {
   const enteredPublicKey = process.argv[2];
-  console.log(enteredPublicKey);
 
   await getWalletBalance(enteredPublicKey);
   await airDropSol(enteredPublicKey);
